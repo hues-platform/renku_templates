@@ -1,0 +1,5 @@
+- folder: python
+  name: Python (3.9) Project
+  description: The Python-3.9-based renku project with necessary supporting files. Installed VS Code and Sphinx and set up graph export.
+  variables: {}
+  icon: python.png

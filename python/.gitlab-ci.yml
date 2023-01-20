@@ -2,11 +2,15 @@ variables:
   GIT_STRATEGY: fetch
   GIT_SSL_NO_VERIFY: "true"
   GIT_LFS_SKIP_SMUDGE: 1
+  TZ: Europe/Zurich  # needs to be set for silent install of tzdata package, used by texlive packages
+  DEBIAN_FRONTEND: noninteractive  # needs to be set for silent install of tzdata package, used by texlive packages
+
 
 stages:
   - build
   - documentation
   - graph
+
 
 image_build:
   stage: build
@@ -31,14 +35,14 @@ build_documentation:
   stage: documentation
   image: "ubuntu:20.04"
   script:
-    - apt-get -y install make
-    - apt-get install -y --no-install-recommends texlive-latex-recommended texlive-fonts-recommended
-    - apt-get install -y --no-install-recommends texlive-latex-extra texlive-fonts-extra texlive-lang-all
-    - apt-get install -y latexmk
     - apt-get update -yq
     - apt-get install -yq python3-pip python3-dev
     - pip3 install --upgrade pip
     - pip3 install sphinx
+    - apt-get -y install make
+    - apt-get install -y --no-install-recommends texlive-latex-recommended texlive-fonts-recommended
+    - apt-get install -y --no-install-recommends texlive-latex-extra texlive-fonts-extra texlive-lang-all tex-gyre
+    - apt-get install -y latexmk
     - mkdir pdfdoc
     - cd docs/source
     - sphinx-build -b latex . _latex

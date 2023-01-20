@@ -5,6 +5,8 @@ variables:
 
 stages:
   - build
+  - documentation
+  - graph
 
 image_build:
   stage: build
@@ -15,3 +17,35 @@ image_build:
     CI_COMMIT_SHA_7=$(echo $CI_COMMIT_SHA | cut -c1-7)
     docker build --tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA_7 .
     docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA_7
+
+export_graph:
+  stage: graph
+  image: 
+    name: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+    entrypoint: ['']
+  script:
+    - renku graph export --full --format jsonld > graph.jsonld
+    - curl -X POST -H "Content-Type:application/ld+json" -T graph.jsonld https://graphdb.nestcollaboration.ch/repositories/test_niod/statements
+
+build_documentation:
+  stage: documentation
+  image: "ubuntu:20.04"
+  script:
+    - apt-get -y install make
+    - apt-get install -y --no-install-recommends texlive-latex-recommended texlive-fonts-recommended
+    - apt-get install -y --no-install-recommends texlive-latex-extra texlive-fonts-extra texlive-lang-all
+    - apt-get install -y latexmk
+    - apt-get update -yq
+    - apt-get install -yq python3-pip python3-dev
+    - pip3 install --upgrade pip
+    - pip3 install sphinx
+    - mkdir pdfdoc
+    - cd docs/source
+    - sphinx-build -b latex . _latex
+    - cd _latex
+    - make
+    - ls -al
+    - cp documentation.pdf ../../../documentation.pdf
+  artifacts:
+    paths:
+      - documentation.pdf

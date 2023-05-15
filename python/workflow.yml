@@ -1,0 +1,9 @@
+name: template
+steps:
+  first:
+    command: python src/main.py data/test.txt data/out.txt
+    inputs:
+      - src/main.py
+      - data/raw/test.txt
+    outputs:
+      - data/interim/out.txt

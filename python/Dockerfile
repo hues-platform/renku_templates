@@ -1,6 +1,6 @@
 # For finding latest versions of the base image see
 # https://github.com/SwissDataScienceCenter/renkulab-docker
-ARG RENKU_BASE_IMAGE=renku/renkulab-py:3.9-0.13.1
+ARG RENKU_BASE_IMAGE=renku/renkulab-py:3.9-0.16.0
 FROM ${RENKU_BASE_IMAGE}
 RUN curl -s https://raw.githubusercontent.com/SwissDataScienceCenter/renkulab-docker/master/scripts/install-vscode.sh | bash
 
@@ -10,7 +10,7 @@ RUN curl -s https://raw.githubusercontent.com/SwissDataScienceCenter/renkulab-do
 # RENKU_VERSION determines the version of the renku CLI
 # that will be used in this image. To find the latest version,
 # visit https://pypi.org/project/renku/#history.
-ARG RENKU_VERSION={{ __renku_version__ | default("2.0.0") }}
+ARG RENKU_VERSION=2.3.2
 
 # Install renku from pypi or from github if a dev version
 RUN if [ -n "$RENKU_VERSION" ] ; then \

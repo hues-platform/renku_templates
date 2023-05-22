@@ -6,8 +6,6 @@ This script is a demonstration for how to use renku workflows.
 The workflow itself is defined in the workflow.yml file. It can be executed within a renku environment with 
 
 renku run workflow.yml
-
-More information can be found here https://renku.readthedocs.io/en/latest/topic-guides/workflows/workflow-file.html
 """
 
 

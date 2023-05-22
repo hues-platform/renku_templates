@@ -1,9 +1,17 @@
+# This is an example of a renku workflow file. Each workflow must have a name. 
 name: template
 steps:
+  # A workflow can then have multiple steps. Here we have one step called "first". This name can be chosen.
   first:
-    command: python src/main.py data/test.txt data/out.txt
+    # Each step must have a command. This will be executed when you run the workflow.
+    command: python src/main.py data/raw/test.txt data/processed/out.txt
+    # Inputs and Outputs should be specified to add them to the renku graph. 
     inputs:
       - src/main.py
       - data/raw/test.txt
     outputs:
-      - data/interim/out.txt
+      - data/processed/out.txt
+
+
+# The workflow can be executed within a renku environment with "renku run workflow.yml".
+# Further information can be found at https://renku.readthedocs.io/en/latest/topic-guides/workflows/workflow-file.html

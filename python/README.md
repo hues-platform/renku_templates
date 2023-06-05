@@ -8,8 +8,8 @@ Both are further explained in the sections below.
 
 ### Project Setup
 Before using the template you should do the following
-    [] change the folder name of the folder "name" to the name of your project
-    [] edit the setup.py file by replacing "name" with your projects name
+- [] change the folder name of the folder "name" to the name of your project
+- [] edit the setup.py file by replacing "name" with your projects name
 
 Doing both will enable installing you project with `pip install -e .`. 
 This will let you import your python code within the src folder but also from other directories.
@@ -31,7 +31,11 @@ An overview of the dependencies can be displayed with `renku workflow visualize 
 
 
 ### Documentation
-how to use sphinx
+Documentation is set up for this template with Sphinx. The Sphinx tool translates a set of plain text source files into various output formats.
+Generating the documentation can be done in two ways:
+1. The Gitlab CI is set up to generate a PDF documentation. It can be downloaded from the CI pipelies artifacts.
+2. It can be created from the console within the renku environment.
+
 
 
 ### Folder Structure

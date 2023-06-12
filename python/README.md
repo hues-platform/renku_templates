@@ -25,9 +25,12 @@ One of the most important ideas behind Renku is the concept of capturing the pro
 For that renku provides workflows. In short a renku workflow is an execution of your code where you explicitly define inputs and ouputs. 
 This way renku can keep track of the dependencies. 
 
-A workflow is best defined in a workflow file. An example is given in this template. 
+A workflow is best defined in a workflow file. An example is given in this template. Some words in the yaml structure are key words. They include "name", "step", "command", "inputs", and "outputs". Make sure not to rename them.
+
 The workflow can be executed with `renku run workflow.yml`
 An overview of the dependencies can be displayed with `renku workflow visualize -i`
+
+More information about workflow files can be found in the `workflow.yml` template and here https://renku.readthedocs.io/en/latest/topic-guides/workflows/workflow-file.html
 
 
 ### Documentation

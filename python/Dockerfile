@@ -36,12 +36,19 @@ RUN if [ -n "$RENKU_VERSION" ] ; then \
 # e.g. the following installs apt-utils and vim; each pkg on its own line, all lines
 # except for the last end with backslash '\' to continue the RUN line
 #
-# USER root
-# RUN apt-get update && \
-#    apt-get install -y --no-install-recommends \
-#    apt-utils \
-#    vim
-# USER ${NB_USER}
+USER root
+RUN apt-get update && \
+   apt-get install -y --no-install-recommends \
+   make \
+   apt-utils \
+   latexmk \ 
+   texlive-latex-recommended \
+   texlive-fonts-recommended \
+   texlive-latex-extra \
+   texlive-fonts-extra \
+   texlive-lang-all \
+   tex-gyre
+USER ${NB_USER}
 
 # install the python dependencies
 COPY requirements.txt environment.yml /tmp/

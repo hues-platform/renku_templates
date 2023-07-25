@@ -1,1 +1,4 @@
 renku-mls
+sphinxcontrib-napoleon
+sphinx
+sphinx-rtd-theme

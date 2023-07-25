@@ -39,7 +39,20 @@ Generating the documentation can be done in two ways:
 1. The Gitlab CI is set up to generate a PDF documentation. It can be downloaded from the CI pipelies artifacts.
 2. It can be created from the console within the renku environment.
 
+To create the documentation within the renku environment use the follwing command:
+```
+sphinx-apidoc -f -o docs/source/api src
+cd docs/source
+sphinx-build -b latex . ./_latex
+cd _latex
+make
+cp documentation.pdf ../../documentation.pdf
+cd ../../../
+rm -r docs/source/_latex
+```
 
+The documentation.pdf file will then be in the docs folder.
+If you want to add the docstrings and funcion signatures of your code to the documentation you just need to add the chapter (api/modules) to the 'index.rst' file. The automatic apidoc from sphinx is already set up.
 
 ### Folder Structure
 ```

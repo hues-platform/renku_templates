@@ -77,10 +77,11 @@ If you want to add the docstrings and funcion signatures of your code to the doc
 ├───setup.py                <- make this project pip installable with `pip install -e`          
 │ 
 ├───src                     <- source code for use in this project
-│   ├───data                <- scripts to download and generate data
-│   ├───features            <- scripts to turn raw data into features for modeling
-│   ├───model               <- scripts to train models and use them for predictions
-│   └───visualization       <- scripts to create exploratory and results oriented visualizations
+│   └───package_name        <- The name that you give your package
+│       ├───data            <- scripts to download and generate data
+│       ├───features        <- scripts to turn raw data into features for modeling
+│       ├───model           <- scripts to train models and use them for predictions
+│       └───visualization   <- scripts to create exploratory and results oriented visualizations
 │ 
 ├───tests                   <- unit tests for pytest
 │ 

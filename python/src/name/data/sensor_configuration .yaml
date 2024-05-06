@@ -1,0 +1,112 @@
+sitzungszimmer022_sensors:
+  40210149: presence_B873 # Presence active B873 [bool]
+  40210032: temp_B871_M00  # Temperature B871 [°C]
+  40210033: VOC_B871 # VOC concentration B871 [ppm]
+  40210021: valve_in # Valve position air inlet [%]
+  40210024: valve_out  # Valve position air outlet [%]
+  40210022: vol_in  # Air volume flow inlet [m^3/h]
+  40210025: vol_out  # Air volume flow outlet [m^3/h]
+
+backbone012_sensors:
+  40210000 : vavle_in_alarm
+  40210001: valve_in_rel 
+  40210002: valve_in_vol 
+  40210003: valve_out_alarm
+  40210004: valve_out_rel 
+  40210005: valve_out_vol 
+  40210006: valve_in_setpoint 
+  40210007: valve_in_setpoint
+  40210008: valve_in_setpoint 
+  40210009: valve_in_limit1 
+  40210010: valve_in_limit2
+  40210011: valve_in_limit3 
+  40210012: temp_B872_M00
+  40210013: VOC_B872 
+  40210014: temp_B872_setpoint_comfort 
+  40210015: temp_B872_setpoint_noone 
+  40210016: temp_B872_setpoint_support
+  40210018: temp_B872_setpoint_current 
+  40210019: temp_B982_setpoint_poti 
+  40210151: presence_B872
+
+
+weather_sensors:
+  3200000: temp_amb_1  # Ambient temperature 1 [°C]
+  40220002: temp_amb_2  # Ambient temperature 2 [°C]
+  40220003: temp_amb_3  # Ambient temperature 3 [°C]
+  42160157: temp_amb_4  # Ambient temperature 4 [°C]
+  3200016: temp_dew  # Dew point temperature [°C]
+  3200001: hum_abs  # Ambient humdity absolute [g/m^3]
+  3200002: hum_rel_1  # Ambient humdity relative 1 [%]
+  40220004: hum_rel_2  # Ambient humdity relative 2 [%]
+  3200008: solar_irrad_1  # Global solar irradiation 1 [W/m^2]
+  40220001: solar_irrad_2  # Global solar irradiation 2 [W/m^2]
+  42160159: solar_irrad_3  # Global solar irradiation 3 [W/m^2]
+  3200003: air_press_abs_1  # Ambient air pressire absolute 1 [hPa]
+  3200017: air_press_abs_2  # Ambient air pressire absolute 2 [hPa]
+  40220005: air_press_abs_3  # Ambient air pressire absolute 3 [hPa]
+  3200004: wind_speed  # Wind speed [m/s]
+  3200005: wind_speed_avg  # Wind speed average [m/s]
+  3200006: wind_direction_1  # Wind direction 1 [°]
+  3200015: wind_direction_2  # Wind direction 2 [°]
+  3200007: precipitation_status  # Precipitation status []
+  
+m2c_sensors: 
+    401160014: co2_B889_common 
+    401160065: co2_B888_workspace 
+    421120051: presence_B143  # Presence active B143 [bool]
+    421120052: presence_B147  # Presence active B147 [bool]
+    421130229: presence_B141  # Presence active B141 [bool]
+    421130231: presence_B142  # Presence active B142 [bool]
+    421130233: presence_B144  # Presence active B144 [bool]
+    421130235: presence_B145  # Presence active B145 [bool]
+    421130237: presence_B146  # Presence active B146 [bool]
+    421130239: presence_B148  # Presence active B148 [bool]
+    421130241: presence_B149  # Presence active B149 [bool]
+    421130243: presence_B150  # Presence active B150 [bool]
+    421130245: presence_B151  # Presence active B151 [bool]
+    421130247: presence_B152  # Presence active B152 [bool]
+    421120000: temp_B110  # Temperature B110 [°C]
+    421120003: temp_B111  # Temperature B111 [°C]
+    421130203: temp_B109  # Temperature B109 [°C]
+    421130206: temp_B119  # Temperature B119 [°C]
+    421130209: temp_B120  # Temperature B120 [°C]
+    421130212: temp_B123  # Temperature B123 [°C]
+    421130215: temp_B124  # Temperature B124 [°C]
+    421130218: temp_B125  # Temperature B125 [°C]
+    421130221: temp_B126  # Temperature B126 [°C]
+    421130224: temp_B127  # Temperature B127 [°C]
+    421120001: hum_B110  # Relative humidity B110 [%]
+    421120004: hum_B111  # Relative humidity B111 [%]
+    421130201: hum_B109  # Relative humidity B109 [%]
+    421130204: hum_B119  # Relative humidity B119 [%]
+    421130207: hum_B120  # Relative humidity B120 [%]
+    421130210: hum_B123  # Relative humidity B123 [%]
+    421130213: hum_B124  # Relative humidity B124 [%]
+    421130216: hum_B125  # Relative humidity B125 [%]
+    421130219: hum_B126  # Relative humidity B126 [%]
+    421130222: hum_B127  # Relative humidity B127 [%]
+    421130225: hum_B128  # Relative humidity B128 [%]
+    421120002: VOC_B110  # VOC concentration B110 [ppm]
+    421120005: VOC_B111  # VOC concentration B111 [ppm]
+    421130202: VOC_B109  # VOC concentration B109 [ppm]
+    421130205: VOC_B119  # VOC concentration B119 [ppm]
+    42140025: el_power_light  # Electrical power for lighting [kW]
+    42140029: el_power_general  # Electrical power general [kW]
+    421120061: window_S100  # Window position S100 [bool]
+    421120062: window_S101  # Window position S101 [bool]
+    421120063: window_S102  # Window position S102 [bool]
+    421120064: window_S103  # Window position S103 [bool]
+    421120065: window_S104  # Window position S104 [bool]
+    421130156: vent_state_L2  # HVAC running [bool]
+    421130158: vent_speed_L2  # HVAC speed [%]
+    421130175: valve_Y720_L2  # Valve position Y720 air inlet [%]
+    421130176: valve_Y721_L2  # Valve position Y721 air inlet [%]
+    421130177: valve_Y722_L2  # Valve position Y722 air inlet [%]
+    421130178: valve_Y723_L2 # Valve position Y722 air inlet [%]
+    421130171: valve_Y720_L1  # Valve position Y720 air inlet [%]
+    421130172: valve_Y721_L1  # Valve position Y721 air inlet [%]
+    421130173: valve_Y722_L1  # Valve position Y722 air inlet [%]
+    421130174: valve_Y723_L1  # Valve position Y723 air inlet [%]
+    421130150: vent_state_L1 # HVAC running [bool]
+    421130152: vent_speed_L1 # HVAC speed [%]

@@ -2,3 +2,8 @@ renku-mls
 sphinxcontrib-napoleon
 sphinx
 sphinx-rtd-theme
+jupyter-matlab-proxy
+numpy
+pandas
+pandas-profiling
+ipywidgets

@@ -121,6 +121,24 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+# Install Gurobi dependencies
+WORKDIR /opt/gurobi
+RUN wget https://packages.gurobi.com/11.0/gurobi11.0.1_linux64.tar.gz \
+    && tar -xzvf gurobi11.0.1_linux64.tar.gz \
+    && rm gurobi11.0.1_linux64.tar.gz \
+    && mv /opt/gurobi/gurobi1101 /opt/gurobi/gurobi
+
+# Set environment variables for Gurobi
+ENV GUROBI_HOME="/opt/gurobi/gurobi"
+ENV PATH="${GUROBI_HOME}/bin:${PATH}"
+ENV LD_LIBRARY_PATH="${GUROBI_HOME}/lib:${LD_LIBRARY_PATH}"
+
+# Install Gurobi Python package
+RUN pip install gurobipy
+
+# Create the directory for the Gurobi license
+RUN mkdir -p /home/jovyan/work/gurobi-wls-project-setup
+
 # Set the correct user to install Python dependencies
 USER ${NB_USER}
 
